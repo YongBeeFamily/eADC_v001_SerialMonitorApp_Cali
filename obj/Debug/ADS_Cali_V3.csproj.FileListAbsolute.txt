@@ -1,0 +1,52 @@
+D:\work\RC\ADS\YB_ADS_Cali_V301\bin\Debug\ADS_Cali_V3.exe.config
+D:\work\RC\ADS\YB_ADS_Cali_V301\bin\Debug\ADS_Cali_V3.exe
+D:\work\RC\ADS\YB_ADS_Cali_V301\bin\Debug\ADS_Cali_V3.pdb
+D:\work\RC\ADS\YB_ADS_Cali_V301\bin\Debug\ZedGraph.dll
+D:\work\RC\ADS\YB_ADS_Cali_V301\bin\Debug\ZedGraph.xml
+D:\work\RC\ADS\YB_ADS_Cali_V301\bin\Debug\de\ZedGraph.resources.dll
+D:\work\RC\ADS\YB_ADS_Cali_V301\bin\Debug\es\ZedGraph.resources.dll
+D:\work\RC\ADS\YB_ADS_Cali_V301\bin\Debug\fr\ZedGraph.resources.dll
+D:\work\RC\ADS\YB_ADS_Cali_V301\bin\Debug\hu\ZedGraph.resources.dll
+D:\work\RC\ADS\YB_ADS_Cali_V301\bin\Debug\it\ZedGraph.resources.dll
+D:\work\RC\ADS\YB_ADS_Cali_V301\bin\Debug\ja\ZedGraph.resources.dll
+D:\work\RC\ADS\YB_ADS_Cali_V301\bin\Debug\pt\ZedGraph.resources.dll
+D:\work\RC\ADS\YB_ADS_Cali_V301\bin\Debug\ru\ZedGraph.resources.dll
+D:\work\RC\ADS\YB_ADS_Cali_V301\bin\Debug\sk\ZedGraph.resources.dll
+D:\work\RC\ADS\YB_ADS_Cali_V301\bin\Debug\sv\ZedGraph.resources.dll
+D:\work\RC\ADS\YB_ADS_Cali_V301\bin\Debug\tr\ZedGraph.resources.dll
+D:\work\RC\ADS\YB_ADS_Cali_V301\bin\Debug\zh-cn\ZedGraph.resources.dll
+D:\work\RC\ADS\YB_ADS_Cali_V301\bin\Debug\zh-tw\ZedGraph.resources.dll
+D:\work\RC\ADS\YB_ADS_Cali_V301\obj\Debug\ADS_Cali_V3.csproj.AssemblyReference.cache
+D:\work\RC\ADS\YB_ADS_Cali_V301\obj\Debug\RealTimeGraph.SerialGraph.resources
+D:\work\RC\ADS\YB_ADS_Cali_V301\obj\Debug\ADS_Cali_V3.Properties.Resources.resources
+D:\work\RC\ADS\YB_ADS_Cali_V301\obj\Debug\ADS_Cali_V3.csproj.GenerateResource.cache
+D:\work\RC\ADS\YB_ADS_Cali_V301\obj\Debug\ADS_Cali_V3.csproj.CoreCompileInputs.cache
+D:\work\RC\ADS\YB_ADS_Cali_V301\obj\Debug\ADS_Cali_V3.csproj.CopyComplete
+D:\work\RC\ADS\YB_ADS_Cali_V301\obj\Debug\ADS_Cali_V3.exe
+D:\work\RC\ADS\YB_ADS_Cali_V301\obj\Debug\ADS_Cali_V3.pdb
+C:\_YongBeeAT_Works\98. ADS v2\ADS v2 SerialMonitorApp\YB_ADS_v2\bin\Debug\ZedGraph.dll
+C:\_YongBeeAT_Works\98. ADS v2\ADS v2 SerialMonitorApp\YB_ADS_v2\bin\Debug\ZedGraph.xml
+C:\_YongBeeAT_Works\98. ADS v2\ADS v2 SerialMonitorApp\YB_ADS_v2\bin\Debug\de\ZedGraph.resources.dll
+C:\_YongBeeAT_Works\98. ADS v2\ADS v2 SerialMonitorApp\YB_ADS_v2\bin\Debug\es\ZedGraph.resources.dll
+C:\_YongBeeAT_Works\98. ADS v2\ADS v2 SerialMonitorApp\YB_ADS_v2\bin\Debug\fr\ZedGraph.resources.dll
+C:\_YongBeeAT_Works\98. ADS v2\ADS v2 SerialMonitorApp\YB_ADS_v2\bin\Debug\hu\ZedGraph.resources.dll
+C:\_YongBeeAT_Works\98. ADS v2\ADS v2 SerialMonitorApp\YB_ADS_v2\bin\Debug\it\ZedGraph.resources.dll
+C:\_YongBeeAT_Works\98. ADS v2\ADS v2 SerialMonitorApp\YB_ADS_v2\bin\Debug\ja\ZedGraph.resources.dll
+C:\_YongBeeAT_Works\98. ADS v2\ADS v2 SerialMonitorApp\YB_ADS_v2\bin\Debug\pt\ZedGraph.resources.dll
+C:\_YongBeeAT_Works\98. ADS v2\ADS v2 SerialMonitorApp\YB_ADS_v2\bin\Debug\ru\ZedGraph.resources.dll
+C:\_YongBeeAT_Works\98. ADS v2\ADS v2 SerialMonitorApp\YB_ADS_v2\bin\Debug\sk\ZedGraph.resources.dll
+C:\_YongBeeAT_Works\98. ADS v2\ADS v2 SerialMonitorApp\YB_ADS_v2\bin\Debug\sv\ZedGraph.resources.dll
+C:\_YongBeeAT_Works\98. ADS v2\ADS v2 SerialMonitorApp\YB_ADS_v2\bin\Debug\tr\ZedGraph.resources.dll
+C:\_YongBeeAT_Works\98. ADS v2\ADS v2 SerialMonitorApp\YB_ADS_v2\bin\Debug\zh-cn\ZedGraph.resources.dll
+C:\_YongBeeAT_Works\98. ADS v2\ADS v2 SerialMonitorApp\YB_ADS_v2\bin\Debug\zh-tw\ZedGraph.resources.dll
+C:\_YongBeeAT_Works\98. ADS v2\ADS v2 SerialMonitorApp\YB_ADS_v2\obj\Debug\ADS_Cali_V3.csproj.AssemblyReference.cache
+C:\_YongBeeAT_Works\98. ADS v2\ADS v2 SerialMonitorApp\YB_ADS_v2\obj\Debug\RealTimeGraph.SerialGraph.resources
+C:\_YongBeeAT_Works\98. ADS v2\ADS v2 SerialMonitorApp\YB_ADS_v2\obj\Debug\ADS_Cali_V3.csproj.GenerateResource.cache
+C:\_YongBeeAT_Works\98. ADS v2\ADS v2 SerialMonitorApp\YB_ADS_v2\obj\Debug\ADS_Cali_V3.csproj.CoreCompileInputs.cache
+C:\_YongBeeAT_Works\98. ADS v2\ADS v2 SerialMonitorApp\YB_ADS_v2\obj\Debug\ADS_Cali_V3.csproj.CopyComplete
+C:\_YongBeeAT_Works\98. ADS v2\ADS v2 SerialMonitorApp\YB_ADS_v2\bin\Debug\ADS_v2_Cali.exe.config
+C:\_YongBeeAT_Works\98. ADS v2\ADS v2 SerialMonitorApp\YB_ADS_v2\bin\Debug\ADS_v2_Cali.exe
+C:\_YongBeeAT_Works\98. ADS v2\ADS v2 SerialMonitorApp\YB_ADS_v2\bin\Debug\ADS_v2_Cali.pdb
+C:\_YongBeeAT_Works\98. ADS v2\ADS v2 SerialMonitorApp\YB_ADS_v2\obj\Debug\ADS_v2_Cali.Properties.Resources.resources
+C:\_YongBeeAT_Works\98. ADS v2\ADS v2 SerialMonitorApp\YB_ADS_v2\obj\Debug\ADS_v2_Cali.exe
+C:\_YongBeeAT_Works\98. ADS v2\ADS v2 SerialMonitorApp\YB_ADS_v2\obj\Debug\ADS_v2_Cali.pdb
