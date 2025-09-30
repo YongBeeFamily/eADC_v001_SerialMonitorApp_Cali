@@ -209,7 +209,7 @@ namespace RealTimeGraph
         {
             string str = "";
             try
-            { 
+            {
                 Int32 xx;
 
                 str += "=\"" + DateTime.Now.ToString() + '"' + ',';
@@ -227,7 +227,7 @@ namespace RealTimeGraph
                 str += "PacketEnd";
                 str += Environment.NewLine;
             }
-            catch(Exception)
+            catch (Exception)
             {
 
             }
@@ -249,7 +249,7 @@ namespace RealTimeGraph
             //        else
             //            str += "=\"" + "0" + '"' + ',';
             //    }
-                
+
             //    str += "=\"" + packet.BMP390_PRESSURE_Raw_01.ToString() + '"' + ',';
             //    str += "=\"" + packet.BMP390_PRESSURE_Raw_02.ToString() + '"' + ',';
             //    str += "=\"" + packet.BMP390_PRESSURE_Raw_03.ToString() + '"' + ',';
@@ -304,7 +304,7 @@ namespace RealTimeGraph
                         {
                             byte tmp = Que.Dequeue();
                             if (tmp == 'A')
-                            {                                
+                            {
                                 receiveData[parsingstep] = (byte)'A';
                                 parsingstep = 1;
                             }
@@ -321,7 +321,7 @@ namespace RealTimeGraph
                         {
                             byte tmp = Que.Dequeue();
                             if (tmp == 'O')
-                            {                                
+                            {
                                 receiveData[parsingstep] = (byte)'O';
                                 parsingstep = 2;
                                 data_size = Marshal.SizeOf(typeof(ADS2OFP_STRUCT));
@@ -354,7 +354,7 @@ namespace RealTimeGraph
 
                         parsingstep = 3;
                     }
-                    else if (parsingstep < (data_size)-1)
+                    else if (parsingstep < (data_size) - 1)
                     {
                         lock (this)
                         {
@@ -365,7 +365,7 @@ namespace RealTimeGraph
                         parsingstep++;
 
                     }
-                    else 
+                    else
                     {
                         lock (this)
                         {
@@ -377,239 +377,239 @@ namespace RealTimeGraph
                         if ((checksum == 0) && (receiveData[0] == 'A') && (receiveData[1] == 'O'))
                         //if  ((receiveData[0] == 'A') && (receiveData[1] == 'O'))
                         {
-                                // 원본
-                                lock (this)
-                                {
-                                    object data = new object();
-
-                                    BytesToStructure(receiveData, ref data, typeof(ADS2OFP_eADC_STRUCT));
-                                //PACKET_DEBUG_INFO recv_data = (PACKET_DEBUG_INFO)data;
-
-                                    ADS2OFP_eADC_STRUCT recv_data = (ADS2OFP_eADC_STRUCT)data;
-
-                                    siDataClass.debug[0] = (float)recv_data.AirPosVel[0];
-                                    siDataClass.debug[1] = (float)recv_data.AirPosVel[1];
-                                    siDataClass.debug[2] = (float)recv_data.AirPosVel[2];
-
-                                    siDataClass.debug[3] = (float)recv_data.AirData_Raw[0] / 100.0f;
-                                    siDataClass.debug[4] = (float)recv_data.AirData_Raw[1] / 100.0f;
-
-                                    siDataClass.debug[5] = (float)recv_data.PTPStemp[0];
-                                    siDataClass.debug[6] = (float)recv_data.PTPStemp[1];
-
-                                    siDataClass.debug[7] = (float)recv_data.BMP581_STATUS;
-
-                                    File_save.file_save_recv(Packet_to_Str(recv_data));
-                                }
-
-
-                                System.Array.Clear(receiveData, 0, receiveData.Length);
-                                checksum = 0;
-                            }
-                            else if ((receiveData[0] == 'L') && (receiveData[1] == 'G'))
+                            // 원본
+                            lock (this)
                             {
                                 object data = new object();
 
-                                BytesToStructure(receiveData, ref data, typeof(GCS2ADS_LOGDATA));
-                                GCS2ADS_LOGDATA recv_data = (GCS2ADS_LOGDATA)data;
+                                BytesToStructure(receiveData, ref data, typeof(ADS2OFP_eADC_STRUCT));
+                                //PACKET_DEBUG_INFO recv_data = (PACKET_DEBUG_INFO)data;
 
-                                //File_save.Log_File_save(LogPacket_to_Str(recv_data));
+                                ADS2OFP_eADC_STRUCT recv_data = (ADS2OFP_eADC_STRUCT)data;
+
+                                siDataClass.debug[0] = (float)recv_data.AirPosVel[0];
+                                siDataClass.debug[1] = (float)recv_data.AirPosVel[1];
+                                siDataClass.debug[2] = (float)recv_data.AirPosVel[2];
+
+                                siDataClass.debug[3] = (float)recv_data.AirData_Raw[0] / 100.0f;
+                                siDataClass.debug[4] = (float)recv_data.AirData_Raw[1] / 100.0f;
+
+                                siDataClass.debug[5] = (float)recv_data.PTPStemp[0];
+                                siDataClass.debug[6] = (float)recv_data.PTPStemp[1];
+
+                                siDataClass.debug[7] = (float)recv_data.BMP581_STATUS;
+
+                                File_save.file_save_recv(Packet_to_Str(recv_data));
                             }
-                            else
-                            {
-                                checksum = 0;
-                            }
-                            parsingstep = 0;
-                            data_recv_cnt = 0;
+
+
+                            System.Array.Clear(receiveData, 0, receiveData.Length);
+                            checksum = 0;
                         }
-                    }
-                    else Thread.Sleep(10);
-                }
-            }
-
-            public void SerialPort_Init()
-            {
-                serialPort1.BaudRate = 115200;
-                serialPort1.StopBits = System.IO.Ports.StopBits.Two;    
-            }
-
-            private void cbComportSel_SelectedIndexChanged(object sender, EventArgs e)
-            {
-                if (serialPort1.IsOpen)
-                    serialPort1.Close();
-            }
-
-            private void cbComportSel_MouseDown(object sender, MouseEventArgs e)
-            {
-                string[] strPort = SerialPort.GetPortNames();
-                cbComportSel.Items.Clear();
-
-                foreach (string number in strPort)
-                {
-                    cbComportSel.Items.Add(number);
-                }
-                cbComportSel.Text = serialPort1.PortName;
-            }
-
-            private void btPortOpen_Click(object sender, EventArgs e)
-            {
-                try
-                {
-                    //label_save();
-                    if (!serialPort1.IsOpen)
-                    {
-                        this.serialPort1.PortName = cbComportSel.SelectedItem.ToString();
-
-                        tickStart = Environment.TickCount - tickPause + tickStart;
-
-                        serialPort1.Open();
-                        if (serialPort1.IsOpen)
+                        else if ((receiveData[0] == 'L') && (receiveData[1] == 'G'))
                         {
-                            tbProcessLog.Text = this.serialPort1.PortName + " Port Opened \r\n";
-                            btPortOpen.Text = "Disconnect";
+                            object data = new object();
 
-                            timer1.Start();
+                            BytesToStructure(receiveData, ref data, typeof(GCS2ADS_LOGDATA));
+                            GCS2ADS_LOGDATA recv_data = (GCS2ADS_LOGDATA)data;
 
-                            File_save.FDR_File_name();
+                            //File_save.Log_File_save(LogPacket_to_Str(recv_data));
                         }
                         else
                         {
-                            tbProcessLog.Text = this.serialPort1.PortName + " Port Open Fail! \r\n";
+                            checksum = 0;
                         }
+                        parsingstep = 0;
+                        data_recv_cnt = 0;
+                    }
+                }
+                else Thread.Sleep(10);
+            }
+        }
+
+        public void SerialPort_Init()
+        {
+            serialPort1.BaudRate = 115200;
+            serialPort1.StopBits = System.IO.Ports.StopBits.Two;
+        }
+
+        private void cbComportSel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen)
+                serialPort1.Close();
+        }
+
+        private void cbComportSel_MouseDown(object sender, MouseEventArgs e)
+        {
+            string[] strPort = SerialPort.GetPortNames();
+            cbComportSel.Items.Clear();
+
+            foreach (string number in strPort)
+            {
+                cbComportSel.Items.Add(number);
+            }
+            cbComportSel.Text = serialPort1.PortName;
+        }
+
+        private void btPortOpen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //label_save();
+                if (!serialPort1.IsOpen)
+                {
+                    this.serialPort1.PortName = cbComportSel.SelectedItem.ToString();
+
+                    tickStart = Environment.TickCount - tickPause + tickStart;
+
+                    serialPort1.Open();
+                    if (serialPort1.IsOpen)
+                    {
+                        tbProcessLog.Text = this.serialPort1.PortName + " Port Opened \r\n";
+                        btPortOpen.Text = "Disconnect";
+
+                        timer1.Start();
+
+                        File_save.FDR_File_name();
                     }
                     else
                     {
-                        serialPort1.Close();
-                        btPortOpen.Text = "Connect";
-                        tickPause = Environment.TickCount;
-                        if (serialPort1.IsOpen)
-                        {
-                            tbProcessLog.Text = this.serialPort1.PortName + " Port Closed Fail ! \r\n";
-                        }
-                        else
-                        {
-                            tbProcessLog.Text = this.serialPort1.PortName + " Port Closed \r\n";
-                            //trycount = 0;
-
-                            //if (tbFileName.Enabled == false)
-                            //tbFileName.Enabled = true;
-                        }
-
-                        timer1.Stop();
+                        tbProcessLog.Text = this.serialPort1.PortName + " Port Open Fail! \r\n";
                     }
-                    tbProcessLog.SelectionStart = tbProcessLog.Text.Length;
-                    tbProcessLog.ScrollToCaret();
-                    //PortStatusCheck();
-                }
-                catch (Exception)
-                {
-                    tbProcessLog.Text = "Port Connect Error \r\n";
-                    tbProcessLog.Text += "Check Your Connection \r\n";
-                    tbProcessLog.SelectionStart = tbProcessLog.Text.Length;
-                    tbProcessLog.ScrollToCaret();
-                    return;
-                }
-            }
-
-            private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
-            {
-                try
-                {
-                    if (serialPort1.IsOpen)
-                    {
-                        int BytesToRead = serialPort1.BytesToRead;
-                        if (BytesToRead > 0)
-                        {
-                            byte[] array = new byte[BytesToRead];
-                            serialPort1.Read(array, 0, BytesToRead);
-                            lock (this)
-                            {
-                                this.BeginInvoke(new SetTextDeleg(si_DataReceived), new object[] { array });
-                                //this.Invoke(new SetTextDeleg(si_DataReceived), new object[] { array });
-                            }
-                        }
-                    }
-                }
-                catch (Exception) { return; }
-            }
-
-
-            private void si_DataReceived(byte[] array)
-            {
-                //data receive
-                try
-                {
-                    if (serialPort1.IsOpen)
-                    {
-                        //int BytesToRead = serialPort1.BytesToRead;
-                        foreach (byte a in array)
-                        {
-                            lock (this)
-                            {
-                                Que.Enqueue(a);
-                            }
-                        }
-                    }
-                }
-                catch (Exception)
-                {
-                    return;
-                }
-            }
-
-            private void SerialGraph_FormClosing(object sender, FormClosingEventArgs e)
-            {
-                DATARUNFLAG = false;
-
-            }
-
-            int tickStart = 0, tickPause = 0;
-
-
-            private void graph_enable(object sender)
-            {
-                int num = 0;
-                foreach (CheckBox cb in cbGraphArray)
-                {
-                    if (cb.Name.Equals(((CheckBox)sender).Name))
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        num++;
-                    }
-                }
-                //cbGraphArray
-
-                LineItem curve = zedGraphControl1.GraphPane.CurveList[num] as LineItem;
-
-                if (cbGraphArray[num].Checked)
-                {
-                    curve.Line.IsVisible = true;
                 }
                 else
-                    curve.Line.IsVisible = false;
+                {
+                    serialPort1.Close();
+                    btPortOpen.Text = "Connect";
+                    tickPause = Environment.TickCount;
+                    if (serialPort1.IsOpen)
+                    {
+                        tbProcessLog.Text = this.serialPort1.PortName + " Port Closed Fail ! \r\n";
+                    }
+                    else
+                    {
+                        tbProcessLog.Text = this.serialPort1.PortName + " Port Closed \r\n";
+                        //trycount = 0;
 
+                        //if (tbFileName.Enabled == false)
+                        //tbFileName.Enabled = true;
+                    }
+
+                    timer1.Stop();
+                }
+                tbProcessLog.SelectionStart = tbProcessLog.Text.Length;
+                tbProcessLog.ScrollToCaret();
+                //PortStatusCheck();
             }
+            catch (Exception)
+            {
+                tbProcessLog.Text = "Port Connect Error \r\n";
+                tbProcessLog.Text += "Check Your Connection \r\n";
+                tbProcessLog.SelectionStart = tbProcessLog.Text.Length;
+                tbProcessLog.ScrollToCaret();
+                return;
+            }
+        }
 
-            private void cbDebug1_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
-            private void cbDebug2_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
-            private void cbDebug3_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
-            private void cbDebug4_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
-            private void cbDebug5_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
-            private void cbDebug6_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
-            private void cbDebug7_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
-            private void cbDebug8_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
-            private void cbDebug9_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
-            private void cbDebug10_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
-            private void cbDebug11_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
-            private void cbDebug12_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
-            private void cbDebug13_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
-            private void cbDebug14_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
-            private void cbDebug15_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
-            private void cbDebug16_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
-        
+        private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            try
+            {
+                if (serialPort1.IsOpen)
+                {
+                    int BytesToRead = serialPort1.BytesToRead;
+                    if (BytesToRead > 0)
+                    {
+                        byte[] array = new byte[BytesToRead];
+                        serialPort1.Read(array, 0, BytesToRead);
+                        lock (this)
+                        {
+                            this.BeginInvoke(new SetTextDeleg(si_DataReceived), new object[] { array });
+                            //this.Invoke(new SetTextDeleg(si_DataReceived), new object[] { array });
+                        }
+                    }
+                }
+            }
+            catch (Exception) { return; }
+        }
+
+
+        private void si_DataReceived(byte[] array)
+        {
+            //data receive
+            try
+            {
+                if (serialPort1.IsOpen)
+                {
+                    //int BytesToRead = serialPort1.BytesToRead;
+                    foreach (byte a in array)
+                    {
+                        lock (this)
+                        {
+                            Que.Enqueue(a);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return;
+            }
+        }
+
+        private void SerialGraph_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DATARUNFLAG = false;
+
+        }
+
+        int tickStart = 0, tickPause = 0;
+
+
+        private void graph_enable(object sender)
+        {
+            int num = 0;
+            foreach (CheckBox cb in cbGraphArray)
+            {
+                if (cb.Name.Equals(((CheckBox)sender).Name))
+                {
+                    break;
+                }
+                else
+                {
+                    num++;
+                }
+            }
+            //cbGraphArray
+
+            LineItem curve = zedGraphControl1.GraphPane.CurveList[num] as LineItem;
+
+            if (cbGraphArray[num].Checked)
+            {
+                curve.Line.IsVisible = true;
+            }
+            else
+                curve.Line.IsVisible = false;
+
+        }
+
+        private void cbDebug1_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
+        private void cbDebug2_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
+        private void cbDebug3_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
+        private void cbDebug4_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
+        private void cbDebug5_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
+        private void cbDebug6_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
+        private void cbDebug7_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
+        private void cbDebug8_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
+        private void cbDebug9_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
+        private void cbDebug10_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
+        private void cbDebug11_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
+        private void cbDebug12_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
+        private void cbDebug13_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
+        private void cbDebug14_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
+        private void cbDebug15_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
+        private void cbDebug16_CheckedChanged(object sender, EventArgs e) { graph_enable(sender); }
+
 
 
         public void Send_uart_Cali_CMD_data(GCS2ADS_LOGDATA str)
@@ -665,21 +665,25 @@ namespace RealTimeGraph
             }
         }
 
-        GCS2ADS_LOGDATA LOG4CALI = new GCS2ADS_LOGDATA();
+        GCS2ADS_LOGDATA LOG4CALI = new GCS2ADS_LOGDATA() { BasePressure = new float[2], SerialNo = new byte[32] };
 
         private void btn_cali_Click(object sender, EventArgs e)
         {
-            LOG4CALI.BasePressure = new float[10];
-            float.TryParse(tb_basepressure.Text.ToString(), out LOG4CALI.BasePressure[0]);
+            float temp = 0.0f;
+            float.TryParse(tb_basepressure.Text.ToString(), out temp);
+            LOG4CALI.BasePressure[0] = temp;
 
             Send_uart_Cali_CMD_data(LOG4CALI);
         }
 
         private void bt_serialNo_Click(object sender, EventArgs e)
         {
-            LOG4CALI.SerialNo = new byte[32];
+            byte[] temp = Encoding.UTF8.GetBytes(tb_serialNo.Text);
 
-            LOG4CALI.SerialNo = Encoding.UTF8.GetBytes(tb_serialNo.ToString());
+            // SerialNo는 이미 32바이트 배열이라고 가정
+            Array.Clear(LOG4CALI.SerialNo, 0, LOG4CALI.SerialNo.Length); // 먼저 0으로 초기화
+            Array.Copy(temp, LOG4CALI.SerialNo, Math.Min(temp.Length, LOG4CALI.SerialNo.Length));
+
 
             Send_uart_SerialNo_CMD_data(LOG4CALI);
         }

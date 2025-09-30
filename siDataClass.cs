@@ -114,10 +114,12 @@ namespace RealTimeGraph
         [MarshalAs(UnmanagedType.U1, SizeConst = 1)]
         public byte Label;                  // 3
 
-        [MarshalAs(UnmanagedType.U1, SizeConst = 32)]
-        public byte[] SerialNo;
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 10, ArraySubType = UnmanagedType.R4)]
+        //[MarshalAs(UnmanagedType.R4, SizeConst = 4)]
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.R4)]
         public float[] BasePressure;        // 4 x 10 = 40
+        //[MarshalAs(UnmanagedType.U1, SizeConst = 32)]
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.U1)]
+        public byte[] SerialNo;
 
         [MarshalAs(UnmanagedType.U1, SizeConst = 1)]
         public byte Checksum;               // 1
