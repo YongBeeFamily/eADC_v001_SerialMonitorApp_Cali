@@ -33,6 +33,8 @@ namespace RealTimeGraph
             this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer_Left = new System.Windows.Forms.SplitContainer();
+            this.tb_serialNo = new System.Windows.Forms.TextBox();
+            this.bt_serialNo = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.tb_basepressure = new System.Windows.Forms.TextBox();
             this.btn_cali = new System.Windows.Forms.Button();
@@ -171,8 +173,9 @@ namespace RealTimeGraph
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox178 = new System.Windows.Forms.TextBox();
-            this.bt_serialNo = new System.Windows.Forms.Button();
-            this.tb_serialNo = new System.Windows.Forms.TextBox();
+            this.tb_serialNoInADC = new System.Windows.Forms.TextBox();
+            this.tb_basepressureInADC = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -254,6 +257,9 @@ namespace RealTimeGraph
             // 
             // splitContainer_Left.Panel2
             // 
+            this.splitContainer_Left.Panel2.Controls.Add(this.label26);
+            this.splitContainer_Left.Panel2.Controls.Add(this.tb_serialNoInADC);
+            this.splitContainer_Left.Panel2.Controls.Add(this.tb_basepressureInADC);
             this.splitContainer_Left.Panel2.Controls.Add(this.tb_serialNo);
             this.splitContainer_Left.Panel2.Controls.Add(this.bt_serialNo);
             this.splitContainer_Left.Panel2.Controls.Add(this.label25);
@@ -263,10 +269,32 @@ namespace RealTimeGraph
             this.splitContainer_Left.SplitterDistance = 475;
             this.splitContainer_Left.TabIndex = 1;
             // 
+            // tb_serialNo
+            // 
+            this.tb_serialNo.Location = new System.Drawing.Point(714, 48);
+            this.tb_serialNo.Name = "tb_serialNo";
+            this.tb_serialNo.Size = new System.Drawing.Size(272, 21);
+            this.tb_serialNo.TabIndex = 5;
+            this.tb_serialNo.Text = "SERIAL NO";
+            this.tb_serialNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // bt_serialNo
+            // 
+            this.bt_serialNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.bt_serialNo.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.bt_serialNo.ForeColor = System.Drawing.Color.White;
+            this.bt_serialNo.Location = new System.Drawing.Point(558, 43);
+            this.bt_serialNo.Name = "bt_serialNo";
+            this.bt_serialNo.Size = new System.Drawing.Size(150, 60);
+            this.bt_serialNo.TabIndex = 4;
+            this.bt_serialNo.Text = "Serial No Input";
+            this.bt_serialNo.UseVisualStyleBackColor = false;
+            this.bt_serialNo.Click += new System.EventHandler(this.bt_serialNo_Click);
+            // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(293, 47);
+            this.label25.Location = new System.Drawing.Point(293, 53);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(27, 12);
             this.label25.TabIndex = 3;
@@ -274,7 +302,7 @@ namespace RealTimeGraph
             // 
             // tb_basepressure
             // 
-            this.tb_basepressure.Location = new System.Drawing.Point(161, 43);
+            this.tb_basepressure.Location = new System.Drawing.Point(161, 48);
             this.tb_basepressure.Name = "tb_basepressure";
             this.tb_basepressure.Size = new System.Drawing.Size(126, 21);
             this.tb_basepressure.TabIndex = 2;
@@ -286,9 +314,9 @@ namespace RealTimeGraph
             this.btn_cali.BackColor = System.Drawing.Color.Red;
             this.btn_cali.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_cali.ForeColor = System.Drawing.Color.White;
-            this.btn_cali.Location = new System.Drawing.Point(29, 23);
+            this.btn_cali.Location = new System.Drawing.Point(29, 43);
             this.btn_cali.Name = "btn_cali";
-            this.btn_cali.Size = new System.Drawing.Size(126, 61);
+            this.btn_cali.Size = new System.Drawing.Size(120, 60);
             this.btn_cali.TabIndex = 0;
             this.btn_cali.Text = "1기압 보정";
             this.btn_cali.UseVisualStyleBackColor = false;
@@ -574,7 +602,7 @@ namespace RealTimeGraph
             this.txDebug16.Name = "txDebug16";
             this.txDebug16.Size = new System.Drawing.Size(155, 21);
             this.txDebug16.TabIndex = 389;
-            this.txDebug16.Text = "--";
+            this.txDebug16.Text = "IBIT";
             // 
             // cbDebug16
             // 
@@ -606,7 +634,7 @@ namespace RealTimeGraph
             this.txDebug15.Name = "txDebug15";
             this.txDebug15.Size = new System.Drawing.Size(155, 21);
             this.txDebug15.TabIndex = 385;
-            this.txDebug15.Text = "--";
+            this.txDebug15.Text = "PBIT";
             // 
             // cbDebug15
             // 
@@ -1702,27 +1730,34 @@ namespace RealTimeGraph
             this.textBox178.Size = new System.Drawing.Size(59, 21);
             this.textBox178.TabIndex = 1;
             // 
-            // bt_serialNo
+            // tb_serialNoInADC
             // 
-            this.bt_serialNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.bt_serialNo.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.bt_serialNo.ForeColor = System.Drawing.Color.White;
-            this.bt_serialNo.Location = new System.Drawing.Point(558, 29);
-            this.bt_serialNo.Name = "bt_serialNo";
-            this.bt_serialNo.Size = new System.Drawing.Size(150, 48);
-            this.bt_serialNo.TabIndex = 4;
-            this.bt_serialNo.Text = "Serial No Input";
-            this.bt_serialNo.UseVisualStyleBackColor = false;
-            this.bt_serialNo.Click += new System.EventHandler(this.bt_serialNo_Click);
+            this.tb_serialNoInADC.Enabled = false;
+            this.tb_serialNoInADC.Location = new System.Drawing.Point(714, 76);
+            this.tb_serialNoInADC.Name = "tb_serialNoInADC";
+            this.tb_serialNoInADC.Size = new System.Drawing.Size(272, 21);
+            this.tb_serialNoInADC.TabIndex = 7;
+            this.tb_serialNoInADC.Text = "SERIAL NO";
+            this.tb_serialNoInADC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tb_serialNo
+            // tb_basepressureInADC
             // 
-            this.tb_serialNo.Location = new System.Drawing.Point(714, 43);
-            this.tb_serialNo.Name = "tb_serialNo";
-            this.tb_serialNo.Size = new System.Drawing.Size(272, 21);
-            this.tb_serialNo.TabIndex = 5;
-            this.tb_serialNo.Text = "SERIAL NO";
-            this.tb_serialNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_basepressureInADC.Enabled = false;
+            this.tb_basepressureInADC.Location = new System.Drawing.Point(161, 76);
+            this.tb_basepressureInADC.Name = "tb_basepressureInADC";
+            this.tb_basepressureInADC.Size = new System.Drawing.Size(126, 21);
+            this.tb_basepressureInADC.TabIndex = 6;
+            this.tb_basepressureInADC.Text = "101325";
+            this.tb_basepressureInADC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(293, 81);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(20, 12);
+            this.label26.TabIndex = 8;
+            this.label26.Text = "Pa";
             // 
             // SerialGraph
             // 
@@ -1924,6 +1959,9 @@ namespace RealTimeGraph
         private System.Windows.Forms.TextBox tb_basepressure;
         private System.Windows.Forms.Button bt_serialNo;
         private System.Windows.Forms.TextBox tb_serialNo;
+        private System.Windows.Forms.TextBox tb_serialNoInADC;
+        private System.Windows.Forms.TextBox tb_basepressureInADC;
+        private System.Windows.Forms.Label label26;
     }
 }
 

@@ -222,7 +222,10 @@ namespace RealTimeGraph
                 str += "=\"" + packet.AirData_Raw[1].ToString() + '"' + ',';
                 str += "=\"" + packet.PTPStemp[0].ToString() + '"' + ',';
                 str += "=\"" + packet.PTPStemp[1].ToString() + '"' + ',';
-                str += "=\"" + packet.BMP581_STATUS.ToString() + '"' + ',';
+                str += "=\"" + packet.bit[0].ToString() + '"' + ',';
+                str += "=\"" + packet.bit[1].ToString() + '"' + ',';
+                str += "=\"" + packet.bit[2].ToString() + '"' + ',';
+
 
                 str += "PacketEnd";
                 str += Environment.NewLine;
@@ -324,7 +327,7 @@ namespace RealTimeGraph
                             {
                                 receiveData[parsingstep] = (byte)'O';
                                 parsingstep = 2;
-                                data_size = Marshal.SizeOf(typeof(ADS2OFP_STRUCT));
+                                data_size = Marshal.SizeOf(typeof(ADS2OFP_eADC_STRUCT));
                                 checksum = 0;
                             }
                             else if (tmp == 'G')
@@ -346,8 +349,6 @@ namespace RealTimeGraph
                         {
                             data_type = Que.Dequeue();
                         }
-
-                        data_size = Marshal.SizeOf(typeof(ADS2OFP_eADC_STRUCT));
 
                         receiveData[parsingstep] = data_type;
                         checksum ^= data_type;
@@ -397,21 +398,21 @@ namespace RealTimeGraph
                                 siDataClass.debug[5] = (float)recv_data.PTPStemp[0];
                                 siDataClass.debug[6] = (float)recv_data.PTPStemp[1];
 
-                                siDataClass.debug[7] = (float)recv_data.BMP581_STATUS;
+                                siDataClass.debug[7] = (float)recv_data.bit[0];
+                                siDataClass.debug[8] = (float)recv_data.bit[1];
+                                siDataClass.debug[9] = (float)recv_data.bit[2];
 
                                 File_save.file_save_recv(Packet_to_Str(recv_data));
                             }
-
-
                             System.Array.Clear(receiveData, 0, receiveData.Length);
                             checksum = 0;
                         }
-                        else    if ((receiveData[0] == 'L') && (receiveData[1] == 'G'))
+                        else if ((checksum == 0) && (receiveData[0] == 'L') && (receiveData[1] == 'G'))
                         {
                             object data = new object();
 
                             BytesToStructure(receiveData, ref data, typeof(GCS2ADS_LOGDATA));
-                            GCS2ADS_LOGDATA recv_data = (GCS2ADS_LOGDATA)data;
+                            LOG4CALIreceived = (GCS2ADS_LOGDATA)data;                            
 
                             //File_save.Log_File_save(LogPacket_to_Str(recv_data));
                         }
@@ -666,6 +667,7 @@ namespace RealTimeGraph
         }
 
         GCS2ADS_LOGDATA LOG4CALI = new GCS2ADS_LOGDATA() { BasePressure = new float[2], SerialNo = new byte[32] };
+        GCS2ADS_LOGDATA LOG4CALIreceived = new GCS2ADS_LOGDATA() { BasePressure = new float[2], SerialNo = new byte[32] };
 
         private void btn_cali_Click(object sender, EventArgs e)
         {
@@ -708,9 +710,18 @@ namespace RealTimeGraph
                             txarray[loop].Text = "배율입력>>";
                         }
                     }
-                    //temp = Convert.ToDouble(xxarray[16].Text) * siDataClass.debug[12];
+
                     var a = Convert.ToString((byte)siDataClass.debug[7], 2).PadLeft(8, '0');
-                    txarray[16].Text = "0x" + a;
+                    txarray[14].Text = a;
+                    var b = Convert.ToString((byte)siDataClass.debug[8], 2).PadLeft(8, '0');
+                    txarray[15].Text = b;
+                    var c = Convert.ToString((byte)siDataClass.debug[9], 2).PadLeft(8, '0');
+                    txarray[16].Text = c;
+
+                    tb_serialNoInADC.Text = LOG4CALIreceived.SerialNo.ToString();
+                    tb_serialNoInADC.Text = Encoding.UTF8.GetString(LOG4CALIreceived.SerialNo);
+
+                    tb_basepressureInADC.Text = LOG4CALIreceived.BasePressure[0].ToString("N2");
 
 
                     LineItem[] curveArray = new LineItem[16];
