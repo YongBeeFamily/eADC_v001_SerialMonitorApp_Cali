@@ -133,7 +133,7 @@ namespace RealTimeGraph
 			string str = "";
 
 			str += "Label" + ",";
-			str += "Data1" + ",";
+			str += "Counter" + ",";
 			str += "Altitude" + ",";
             str += "Velocity" + ",";
             str += "Vertical Velocity" + ","; 
@@ -141,7 +141,9 @@ namespace RealTimeGraph
 			str += "PS Pressure" + ",";
 			str += "PT Temperature" + ",";
 			str += "PS Temperature" + ",";
-            str += "Sensor Status" + ",";
+            str += "PBIT" + ",";
+            str += "IBIT" + ",";
+            str += "CBIT" + ",";
             str += "END" + ",";
 
 			str += Environment.NewLine;

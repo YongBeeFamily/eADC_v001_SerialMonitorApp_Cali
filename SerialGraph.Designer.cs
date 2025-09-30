@@ -33,6 +33,9 @@ namespace RealTimeGraph
             this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer_Left = new System.Windows.Forms.SplitContainer();
+            this.label26 = new System.Windows.Forms.Label();
+            this.tb_serialNoInADC = new System.Windows.Forms.TextBox();
+            this.tb_basepressureInADC = new System.Windows.Forms.TextBox();
             this.tb_serialNo = new System.Windows.Forms.TextBox();
             this.bt_serialNo = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
@@ -173,9 +176,6 @@ namespace RealTimeGraph
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox178 = new System.Windows.Forms.TextBox();
-            this.tb_serialNoInADC = new System.Windows.Forms.TextBox();
-            this.tb_basepressureInADC = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -268,6 +268,35 @@ namespace RealTimeGraph
             this.splitContainer_Left.Size = new System.Drawing.Size(1010, 621);
             this.splitContainer_Left.SplitterDistance = 475;
             this.splitContainer_Left.TabIndex = 1;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(293, 81);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(20, 12);
+            this.label26.TabIndex = 8;
+            this.label26.Text = "Pa";
+            // 
+            // tb_serialNoInADC
+            // 
+            this.tb_serialNoInADC.Enabled = false;
+            this.tb_serialNoInADC.Location = new System.Drawing.Point(714, 76);
+            this.tb_serialNoInADC.Name = "tb_serialNoInADC";
+            this.tb_serialNoInADC.Size = new System.Drawing.Size(272, 21);
+            this.tb_serialNoInADC.TabIndex = 7;
+            this.tb_serialNoInADC.Text = "SERIAL NO";
+            this.tb_serialNoInADC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tb_basepressureInADC
+            // 
+            this.tb_basepressureInADC.Enabled = false;
+            this.tb_basepressureInADC.Location = new System.Drawing.Point(161, 76);
+            this.tb_basepressureInADC.Name = "tb_basepressureInADC";
+            this.tb_basepressureInADC.Size = new System.Drawing.Size(126, 21);
+            this.tb_basepressureInADC.TabIndex = 6;
+            this.tb_basepressureInADC.Text = "101325";
+            this.tb_basepressureInADC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tb_serialNo
             // 
@@ -1730,35 +1759,6 @@ namespace RealTimeGraph
             this.textBox178.Size = new System.Drawing.Size(59, 21);
             this.textBox178.TabIndex = 1;
             // 
-            // tb_serialNoInADC
-            // 
-            this.tb_serialNoInADC.Enabled = false;
-            this.tb_serialNoInADC.Location = new System.Drawing.Point(714, 76);
-            this.tb_serialNoInADC.Name = "tb_serialNoInADC";
-            this.tb_serialNoInADC.Size = new System.Drawing.Size(272, 21);
-            this.tb_serialNoInADC.TabIndex = 7;
-            this.tb_serialNoInADC.Text = "SERIAL NO";
-            this.tb_serialNoInADC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tb_basepressureInADC
-            // 
-            this.tb_basepressureInADC.Enabled = false;
-            this.tb_basepressureInADC.Location = new System.Drawing.Point(161, 76);
-            this.tb_basepressureInADC.Name = "tb_basepressureInADC";
-            this.tb_basepressureInADC.Size = new System.Drawing.Size(126, 21);
-            this.tb_basepressureInADC.TabIndex = 6;
-            this.tb_basepressureInADC.Text = "101325";
-            this.tb_basepressureInADC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(293, 81);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(20, 12);
-            this.label26.TabIndex = 8;
-            this.label26.Text = "Pa";
-            // 
             // SerialGraph
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -1767,7 +1767,7 @@ namespace RealTimeGraph
             this.Controls.Add(this.tabControl1);
             this.Name = "SerialGraph";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ADS v3e Monitor";
+            this.Text = "eADS Monitor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SerialGraph_FormClosing);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
