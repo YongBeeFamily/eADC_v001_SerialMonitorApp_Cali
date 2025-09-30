@@ -347,7 +347,7 @@ namespace RealTimeGraph
                             data_type = Que.Dequeue();
                         }
 
-                        //data_size = Marshal.SizeOf(typeof(ADS2OFP_STRUCT));
+                        data_size = Marshal.SizeOf(typeof(ADS2OFP_eADC_STRUCT));
 
                         receiveData[parsingstep] = data_type;
                         checksum ^= data_type;
@@ -406,7 +406,7 @@ namespace RealTimeGraph
                             System.Array.Clear(receiveData, 0, receiveData.Length);
                             checksum = 0;
                         }
-                        else if ((receiveData[0] == 'L') && (receiveData[1] == 'G'))
+                        else    if ((receiveData[0] == 'L') && (receiveData[1] == 'G'))
                         {
                             object data = new object();
 
