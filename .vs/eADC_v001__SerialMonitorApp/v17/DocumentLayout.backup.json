@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "E:\\_YongBeeAT_Works\\14. ADS\\5. eADC\\eADC_v001 SerialMonitorApp\\eADC_v001_SerialMonitorApp_Cali\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7D379B80-6B9C-4815-B306-ABB372F72388}|eADC_v001__SerialMonitorApp.csproj|e:\\_yongbeeat_works\\14. ads\\5. eadc\\eadc_v001 serialmonitorapp\\eadc_v001_serialmonitorapp_cali\\serialgraph.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7D379B80-6B9C-4815-B306-ABB372F72388}|eADC_v001__SerialMonitorApp.csproj|E:\\_YongBeeAT_Works\\14. ADS\\5. eADC\\eADC_v001 SerialMonitorApp\\eADC_v001_SerialMonitorApp_Cali\\file_save.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D379B80-6B9C-4815-B306-ABB372F72388}|eADC_v001__SerialMonitorApp.csproj|solutionrelative:file_save.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D379B80-6B9C-4815-B306-ABB372F72388}|eADC_v001__SerialMonitorApp.csproj|E:\\_YongBeeAT_Works\\14. ADS\\5. eADC\\eADC_v001 SerialMonitorApp\\eADC_v001_SerialMonitorApp_Cali\\serialgraph.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D379B80-6B9C-4815-B306-ABB372F72388}|eADC_v001__SerialMonitorApp.csproj|solutionrelative:serialgraph.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D379B80-6B9C-4815-B306-ABB372F72388}|eADC_v001__SerialMonitorApp.csproj|E:\\_YongBeeAT_Works\\14. ADS\\5. eADC\\eADC_v001 SerialMonitorApp\\eADC_v001_SerialMonitorApp_Cali\\serialgraph.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{7D379B80-6B9C-4815-B306-ABB372F72388}|eADC_v001__SerialMonitorApp.csproj|e:\\_yongbeeat_works\\14. ads\\5. eadc\\eadc_v001 serialmonitorapp\\eadc_v001_serialmonitorapp_cali\\serialgraph.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7D379B80-6B9C-4815-B306-ABB372F72388}|eADC_v001__SerialMonitorApp.csproj|solutionrelative:serialgraph.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7D379B80-6B9C-4815-B306-ABB372F72388}|eADC_v001__SerialMonitorApp.csproj|E:\\_YongBeeAT_Works\\14. ADS\\5. eADC\\eADC_v001 SerialMonitorApp\\eADC_v001_SerialMonitorApp_Cali\\sidataclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D379B80-6B9C-4815-B306-ABB372F72388}|eADC_v001__SerialMonitorApp.csproj|solutionrelative:sidataclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D379B80-6B9C-4815-B306-ABB372F72388}|eADC_v001__SerialMonitorApp.csproj|E:\\_YongBeeAT_Works\\14. ADS\\5. eADC\\eADC_v001 SerialMonitorApp\\eADC_v001_SerialMonitorApp_Cali\\file_save.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D379B80-6B9C-4815-B306-ABB372F72388}|eADC_v001__SerialMonitorApp.csproj|solutionrelative:file_save.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,45 +38,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "siDataClass.cs",
               "DocumentMoniker": "E:\\_YongBeeAT_Works\\14. ADS\\5. eADC\\eADC_v001 SerialMonitorApp\\eADC_v001_SerialMonitorApp_Cali\\siDataClass.cs",
               "RelativeDocumentMoniker": "siDataClass.cs",
               "ToolTip": "E:\\_YongBeeAT_Works\\14. ADS\\5. eADC\\eADC_v001 SerialMonitorApp\\eADC_v001_SerialMonitorApp_Cali\\siDataClass.cs",
               "RelativeToolTip": "siDataClass.cs",
-              "ViewState": "AgIAAGoAAAAAAAAAAAAtwHUAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAkwNcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T02:16:46.769Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T02:16:46.769Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "file_save.cs",
               "DocumentMoniker": "E:\\_YongBeeAT_Works\\14. ADS\\5. eADC\\eADC_v001 SerialMonitorApp\\eADC_v001_SerialMonitorApp_Cali\\file_save.cs",
               "RelativeDocumentMoniker": "file_save.cs",
               "ToolTip": "E:\\_YongBeeAT_Works\\14. ADS\\5. eADC\\eADC_v001 SerialMonitorApp\\eADC_v001_SerialMonitorApp_Cali\\file_save.cs",
               "RelativeToolTip": "file_save.cs",
-              "ViewState": "AgIAAG0AAAAAAAAAAAAAAJIAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAAAI0AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-06T09:47:57.606Z"
+              "WhenOpened": "2025-08-06T09:47:57.606Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "SerialGraph.cs",
               "DocumentMoniker": "E:\\_YongBeeAT_Works\\14. ADS\\5. eADC\\eADC_v001 SerialMonitorApp\\eADC_v001_SerialMonitorApp_Cali\\SerialGraph.cs",
               "RelativeDocumentMoniker": "SerialGraph.cs",
               "ToolTip": "E:\\_YongBeeAT_Works\\14. ADS\\5. eADC\\eADC_v001 SerialMonitorApp\\eADC_v001_SerialMonitorApp_Cali\\SerialGraph.cs",
               "RelativeToolTip": "SerialGraph.cs",
-              "ViewState": "AgIAAGQCAAAAAAAAAAAYwHUCAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAMkCAAAAAAAAAAAqwOQCAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-06T08:59:22.338Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "SerialGraph.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "E:\\_YongBeeAT_Works\\14. ADS\\5. eADC\\eADC_v001 SerialMonitorApp\\eADC_v001_SerialMonitorApp_Cali\\SerialGraph.cs",
               "RelativeDocumentMoniker": "SerialGraph.cs",

@@ -114,14 +114,16 @@ namespace RealTimeGraph
         [MarshalAs(UnmanagedType.U1, SizeConst = 1)]
         public byte Label;                  // 3
 
-        [MarshalAs(UnmanagedType.U1, SizeConst = 32)]
-        public byte[] SerialNo;
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 10, ArraySubType = UnmanagedType.R4)]
-        public float[] BasePressure;        // 4 x 10 = 40
+        //[MarshalAs(UnmanagedType.R4, SizeConst = 4)]
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.R4)]
+        public float[] BasePressure;        // 4 x 2 = 8
+        //[MarshalAs(UnmanagedType.U1, SizeConst = 32)]
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.U1)]
+        public byte[] SerialNo;             // 32
 
         [MarshalAs(UnmanagedType.U1, SizeConst = 1)]
         public byte Checksum;               // 1
-    }
+    }                                       // = 44
 
 
 
@@ -161,9 +163,7 @@ namespace RealTimeGraph
         [MarshalAs(UnmanagedType.U1, SizeConst = 1)]
         public byte Header2;
         [MarshalAs(UnmanagedType.U1, SizeConst = 1)]
-        public byte CMD_Counter;
-        [MarshalAs(UnmanagedType.U1, SizeConst = 1)]
-        public byte BMP581_STATUS;      // 4
+        public byte CMD_Counter;        // 3
 
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.R4)]
         public float[] AirPosVel;       // 12
@@ -171,10 +171,12 @@ namespace RealTimeGraph
         public UInt32[] AirData_Raw;    // 8
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.R4)]
         public float[] PTPStemp;        // 8
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.U1)]
+        public byte[] bit;              // 3
 
         [MarshalAs(UnmanagedType.U1, SizeConst = 1)]
         public byte Checksum;           // 1
-    }                                   // 33 = 4 + 12 + 8 + 8 + 1
+    }                                   // 35 = 3 + 12 + 8 + 8 + 1
 
     //public static class siDataClass
     //{

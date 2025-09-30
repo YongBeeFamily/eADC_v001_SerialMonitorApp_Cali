@@ -71,7 +71,6 @@ E:\_YongBeeAT_Works\14. ADS\5. eADC\eADC_v001 SerialMonitorApp\eADC_v001_SerialM
 E:\_YongBeeAT_Works\14. ADS\5. eADC\eADC_v001 SerialMonitorApp\eADC_v001_SerialMonitorApp_Cali\bin\Debug\zh-cn\ZedGraph.resources.dll
 E:\_YongBeeAT_Works\14. ADS\5. eADC\eADC_v001 SerialMonitorApp\eADC_v001_SerialMonitorApp_Cali\bin\Debug\zh-tw\ZedGraph.resources.dll
 E:\_YongBeeAT_Works\14. ADS\5. eADC\eADC_v001 SerialMonitorApp\eADC_v001_SerialMonitorApp_Cali\obj\Debug\eADC_v001__SerialMonitorApp.csproj.AssemblyReference.cache
-E:\_YongBeeAT_Works\14. ADS\5. eADC\eADC_v001 SerialMonitorApp\eADC_v001_SerialMonitorApp_Cali\obj\Debug\ADS_v2_Cali.exe.config
 E:\_YongBeeAT_Works\14. ADS\5. eADC\eADC_v001 SerialMonitorApp\eADC_v001_SerialMonitorApp_Cali\obj\Debug\RealTimeGraph.SerialGraph.resources
 E:\_YongBeeAT_Works\14. ADS\5. eADC\eADC_v001 SerialMonitorApp\eADC_v001_SerialMonitorApp_Cali\obj\Debug\ADS_v2_Cali.Properties.Resources.resources
 E:\_YongBeeAT_Works\14. ADS\5. eADC\eADC_v001 SerialMonitorApp\eADC_v001_SerialMonitorApp_Cali\obj\Debug\eADC_v001__SerialMonitorApp.csproj.GenerateResource.cache
@@ -79,3 +78,4 @@ E:\_YongBeeAT_Works\14. ADS\5. eADC\eADC_v001 SerialMonitorApp\eADC_v001_SerialM
 E:\_YongBeeAT_Works\14. ADS\5. eADC\eADC_v001 SerialMonitorApp\eADC_v001_SerialMonitorApp_Cali\obj\Debug\eADC_v00.39F0FBB4.Up2Date
 E:\_YongBeeAT_Works\14. ADS\5. eADC\eADC_v001 SerialMonitorApp\eADC_v001_SerialMonitorApp_Cali\obj\Debug\ADS_v2_Cali.exe
 E:\_YongBeeAT_Works\14. ADS\5. eADC\eADC_v001 SerialMonitorApp\eADC_v001_SerialMonitorApp_Cali\obj\Debug\ADS_v2_Cali.pdb
+E:\_YongBeeAT_Works\14. ADS\5. eADC\eADC_v001 SerialMonitorApp\eADC_v001_SerialMonitorApp_Cali\obj\Debug\ADS_v2_Cali.exe.config
